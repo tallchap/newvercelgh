@@ -8,7 +8,7 @@ export default function Home() {
         height: "100vh",
       }}
     >
-      <h1>vizard webcooked bad</h1>
+      <h1>vizard webcooked yes</h1>
     </main>
   );
 }
