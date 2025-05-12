@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { handleProjectCompletion } from "@/lib/analyzeClips";
+import { handleProjectCompletion } from "../../lib/analyzeClips";
 
 export default async function webhook(
   req: NextApiRequest,
@@ -21,7 +21,9 @@ export default async function webhook(
     videos?: any[];
   };
   console.log(
-    `[vizard-webhook] projectId=${projectId}, code=${code}, clipsCount=${videos?.length ?? 0}`,
+    `[vizard-webhook] projectId=${projectId}, code=${code}, clipsCount=${
+      videos?.length ?? 0
+    }`,
   );
 
   if (code !== 2000 || !projectsDefined(projectId)) {
