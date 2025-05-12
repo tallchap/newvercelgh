@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 interface VizardVideo {
   videoId?: number;
   transcript?: string;
@@ -34,7 +32,9 @@ export async function handleProjectCompletion(projectId: number) {
           messages: [
             {
               role: "user",
-              content: `${question}\nTranscript:\n${transcript}`,
+              content: `${question}
+Transcript:
+${transcript}`,
             },
           ],
           temperature: 0,
