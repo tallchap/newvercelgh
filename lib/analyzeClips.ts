@@ -14,7 +14,8 @@ export async function handleProjectCompletion(projectId: number) {
     `https://elb-api.vizard.ai/hvizard-server-front/open-api/v1/project/query/${projectId}`,
     { headers: { VIZARDAI_API_KEY: VIZARD_API_KEY } },
   );
-  const { videos: allClips }: { videos: VizardVideo[] } = await queryRes.json();
+  const data = await queryRes.json();
+  const allClips: VizardVideo[] = data.videos || [];
 
   // Analyze each transcript
   const question = "Is John Stamos mentioned in this transcript?";
