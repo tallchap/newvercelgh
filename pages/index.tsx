@@ -8,7 +8,7 @@ export default function Home() {
         height: "100vh",
       }}
     >
-      <h1>vizardwebcooke yes</h1>
+      <h1>vizardwebcookie yes</h1>
     </main>
   );
 }
